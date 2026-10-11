@@ -29,7 +29,7 @@ export default function AboutPage() {
             </div>
             <div className="relative h-80 md:h-[480px]">
               <Image
-                src="/images/about-hero.png"
+                src="/images/about-YBg4X2DB0PUBPl1W.png"
                 alt="Charlotte Szabo, Marion Poli et Aniqa Charania sur scène"
                 fill
                 className="object-cover object-center rounded-md"
@@ -63,7 +63,14 @@ export default function AboutPage() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               {a.performers.map(p => (
-                <article key={p.name} className="flex flex-col gap-2">
+                <article key={p.name} className="flex flex-col gap-3">
+                  {p.photo && (
+                    <div className="relative w-full aspect-square rounded-sm overflow-hidden">
+                      <Image src={p.photo} alt={p.name} fill
+                        className="object-cover object-top"
+                        sizes="(max-width: 768px) 100vw, 33vw" />
+                    </div>
+                  )}
                   <h3 className="text-xl font-black text-on-accent">{p.name}</h3>
                   <p className="text-sm font-semibold text-on-accent/70 uppercase tracking-wide">{p.role}</p>
                   {p.bio && <p className="text-on-accent/80 leading-relaxed text-sm">{p.bio}</p>}
@@ -72,9 +79,18 @@ export default function AboutPage() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {a.crew.map(m => (
-                <div key={m.name} className="bg-accent/80 border border-on-accent/20 rounded-sm p-4">
-                  <p className="font-semibold text-on-accent">{m.name}</p>
-                  <p className="text-sm text-on-accent/70 mt-1">{m.role}</p>
+                <div key={m.name} className="bg-accent/80 border border-on-accent/20 rounded-sm overflow-hidden">
+                  {m.photo && (
+                    <div className="relative w-full aspect-video">
+                      <Image src={m.photo} alt={m.name} fill
+                        className="object-cover object-top"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
+                    </div>
+                  )}
+                  <div className="p-4">
+                    <p className="font-semibold text-on-accent">{m.name}</p>
+                    <p className="text-sm text-on-accent/70 mt-1">{m.role}</p>
+                  </div>
                 </div>
               ))}
             </div>

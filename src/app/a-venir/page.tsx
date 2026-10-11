@@ -37,7 +37,7 @@ export default function UpcomingPage() {
             </div>
             <div className="relative h-80 md:h-[480px]">
               <Image
-                src="/images/upcoming-pinup.png"
+                src="/images/affiche-a3-avec-bandeau-Bae2mZBsZHvou3Oy.jpg"
                 alt="Illustration vintage — dates à venir"
                 fill
                 className="object-contain object-right"

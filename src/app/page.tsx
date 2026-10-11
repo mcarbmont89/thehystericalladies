@@ -37,7 +37,7 @@ export default function HomePage() {
             </div>
             {/* Pin-up illustration anchored right */}
             <Image
-              src="/images/hero-pinup.png"
+              src="/images/vintage1-YX4bo89J9RcnnKDK.png"
               alt={c.home.heroAlt}
               fill
               priority
@@ -90,7 +90,7 @@ export default function HomePage() {
             </div>
             <div className="relative h-72 md:h-96">
               <Image
-                src="/images/upcoming-pinup.png"
+                src="/images/web-site-the-hysterical-ladies-YZ9EVZWqD1CzJRp6.png"
                 alt="Illustration rétro — dates à venir"
                 fill
                 className="object-contain object-right"
@@ -105,7 +105,7 @@ export default function HomePage() {
           <div className="content-wrap grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="relative h-72 md:h-96 order-2 md:order-1">
               <Image
-                src="/images/contribuer-pinup.png"
+                src="/images/about-m5Kb3lQV8lFVQXQ5.png"
                 alt="Illustration rétro — soutenir le spectacle"
                 fill
                 className="object-contain object-left"
@@ -147,7 +147,7 @@ export default function HomePage() {
             </div>
             <div className="relative h-72 md:h-96">
               <Image
-                src="/images/apercu-pinup.png"
+                src="/images/about-mnl9OXko6lc4vond.png"
                 alt="Illustration rétro — aperçu du spectacle"
                 fill
                 className="object-contain object-right"
@@ -207,7 +207,7 @@ export default function HomePage() {
             </div>
             <div className="relative h-72 md:h-96">
               <Image
-                src="/images/contact-pinup.png"
+                src="/images/contact-Yyv76eGb06SwQ1PL.png"
                 alt="Les Hysterical Ladies en répétition"
                 fill
                 className="object-contain object-right"

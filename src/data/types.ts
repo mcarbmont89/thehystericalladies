@@ -9,11 +9,13 @@ export interface Performer {
   name: string
   role: string
   bio: string
+  photo?: string
 }
 
 export interface CrewMember {
   name: string
   role: string
+  photo?: string
 }
 
 export interface Event {
@@ -32,6 +34,7 @@ export interface Review {
   date: string
   city: string
   url?: string
+  logo?: string
 }
 
 export interface GalleryGroup {
