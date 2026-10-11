@@ -28,11 +28,16 @@ export default function HomePage() {
         <section aria-label="Présentation du spectacle" className="relative w-full pt-nav bg-accent overflow-hidden">
           <div className="relative w-full min-h-[55vw] md:min-h-[42vw]">
             {/* Giant translucent title text behind the pin-up */}
-            <div className="absolute inset-0 flex items-center z-0 pointer-events-none select-none">
+            <div className="absolute inset-0 flex flex-col justify-center z-0 pointer-events-none select-none pl-[3vw]">
               <p aria-hidden="true"
-                className="font-display font-black italic uppercase leading-none text-white/10 pl-[3vw]"
-                style={{ fontSize: 'clamp(48px, 9vw, 130px)', width: '66%' }}>
+                className="font-display font-black italic uppercase leading-[0.9] text-black/25"
+                style={{ fontSize: 'clamp(64px, 11vw, 160px)', width: '60%' }}>
                 the catalogue of sexual anxieties
+              </p>
+              <p aria-hidden="true"
+                className="font-display italic text-black/20 mt-3"
+                style={{ fontSize: 'clamp(14px, 2vw, 28px)' }}>
+                by The Hysterical Ladies
               </p>
             </div>
             {/* Pin-up illustration anchored right */}
@@ -114,30 +119,38 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Contribute — dark section with pin-up */}
-        <section aria-labelledby="contribute-heading" className="section-dark section-pad">
-          <div className="content-wrap grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-72 md:h-96 order-2 md:order-1">
-              <Image
-                src="/images/about-m5Kb3lQV8lFVQXQ5.png"
-                alt="Illustration rétro — soutenir le spectacle"
-                fill
-                className="object-contain object-left"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-            <div className="flex flex-col gap-6 order-1 md:order-2">
-              <h2 id="contribute-heading" className="text-3xl md:text-display font-black text-text">
-                {c.home.sectionTitles.contribute}
-              </h2>
-              <p className="text-muted leading-relaxed">{c.home.contributeText}</p>
-              <a href="https://www.helloasso.com/associations/au-haz-art/formulaires/3"
-                target="_blank" rel="noopener noreferrer"
-                className="self-start bg-accent text-on-accent font-bold font-display italic text-lg
-                           px-8 py-3 rounded-sm hover:opacity-90 transition-opacity duration-[200ms]
-                           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg">
-                {c.home.contributeButton}
-              </a>
+        {/* Contribute — red section with HelloAsso widget */}
+        <section aria-labelledby="contribute-heading" className="section-red section-pad">
+          <div className="content-wrap">
+            <h2 id="contribute-heading" className="text-3xl md:text-display font-black text-on-accent text-center underline decoration-2 underline-offset-4 mb-8">
+              {c.home.sectionTitles.contribute}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+              <div className="flex flex-col gap-4">
+                <p className="text-on-accent/80 leading-relaxed text-center">{c.home.contributeText}</p>
+                <iframe
+                  id="haWidget"
+                  src="https://www.helloasso.com/associations/au-haz-art/formulaires/3/widget"
+                  title="Faire un don — HelloAsso"
+                  className="w-full rounded-sm bg-white"
+                  style={{ height: '460px', border: 'none' }}
+                  loading="lazy"
+                />
+                <a href="https://www.helloasso.com/associations/au-haz-art/formulaires/3"
+                  target="_blank" rel="noopener noreferrer"
+                  className="text-center text-on-accent/70 text-sm underline hover:text-on-accent transition-colors">
+                  Ouvrir dans HelloAsso →
+                </a>
+              </div>
+              <div className="relative h-72 md:h-[480px]">
+                <Image
+                  src="/images/about-m5Kb3lQV8lFVQXQ5.png"
+                  alt="Illustration rétro — soutenir le spectacle"
+                  fill
+                  className="object-contain object-center md:object-right"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
             </div>
           </div>
         </section>

@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 }
 
 const VIDEOS = [
+  { id: 'GJFuTStdB4s', title: 'The Catalogue of Sexual Anxieties — Preparation For Sex' },
+  { id: 'TPJbJD22Rl4', title: 'Teaser Paris — le catalogue des anxiétés sexuelles' },
   { id: 'cOFvMe6AwqA', title: 'Sneaky Peek' },
-  { id: 'TPJbJD22Rl4', title: 'Short Teaser' },
-  { id: 'GJFuTStdB4s', title: 'Preparation for Sex' },
 ]
 
 export default function GalleryPage() {
@@ -24,23 +24,45 @@ export default function GalleryPage() {
       <NavBar links={c.nav} currentLang="fr" currentPath="/apercu" />
       <main id="main" className="pt-nav">
 
-        <section className="section-dark section-pad">
+        {/* Videos + Gallery — red background */}
+        <section className="section-red section-pad">
           <div className="content-wrap">
-            <h1 className="text-display md:text-hero font-black text-text mb-4">{g.heading}</h1>
+            <h1 className="text-display md:text-hero font-black text-on-accent mb-4 underline decoration-2 underline-offset-4">
+              {g.heading}
+            </h1>
             {g.subtitle && (
-              <p className="text-muted text-lg leading-relaxed mb-12">{g.subtitle}</p>
+              <p className="text-on-accent/80 text-lg leading-relaxed mb-12">{g.subtitle}</p>
             )}
 
+            {/* YouTube videos */}
+            <div className="flex flex-col gap-8 mb-16">
+              {VIDEOS.map(v => (
+                <div key={v.id}>
+                  <div className="relative w-full aspect-video rounded-sm overflow-hidden bg-black">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${v.id}`}
+                      title={v.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full"
+                    />
+                  </div>
+                  <p className="text-on-accent/70 text-sm mt-2 italic">{v.title}</p>
+                </div>
+              ))}
+            </div>
+
             {/* Photo gallery */}
-            <div className="flex flex-col gap-16">
+            <div className="flex flex-col gap-12">
               {g.groups.map(group => (
                 <div key={`${group.venue}-${group.year}`}>
-                  <h2 className="text-xl font-bold text-muted mb-6 font-sans not-italic">
-                    {group.venue} <span className="text-border-input">·</span> {group.year}
+                  <h2 className="text-lg font-bold text-on-accent mb-4">
+                    {group.venue} <span className="text-on-accent/50">·</span> {group.year}
                   </h2>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                     {group.photos.map((photo, i) => (
-                      <div key={i} className="relative aspect-square bg-surface rounded-sm overflow-hidden">
+                      <div key={i} className="relative aspect-square bg-black/20 rounded-sm overflow-hidden">
                         <Image
                           src={photo.src}
                           alt={photo.alt}
@@ -54,39 +76,6 @@ export default function GalleryPage() {
                   </div>
                 </div>
               ))}
-            </div>
-
-            {/* Video embeds */}
-            <div className="mt-20">
-              <h2 className="text-display font-black text-text mb-8">Vidéos</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {VIDEOS.map(v => (
-                  <div key={v.id} className="flex flex-col gap-3">
-                    <div className="relative w-full aspect-video rounded-sm overflow-hidden bg-surface">
-                      <iframe
-                        src={`https://www.youtube.com/embed/${v.id}`}
-                        title={v.title}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        loading="lazy"
-                        className="absolute inset-0 w-full h-full"
-                      />
-                    </div>
-                    <p className="text-sm font-semibold text-muted italic">{v.title}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Bottom illustration */}
-            <div className="mt-16 relative h-64 md:h-80">
-              <Image
-                src="/images/about-d95gkZDa01i4O2q7.png"
-                alt="Illustration vintage — aperçu"
-                fill
-                className="object-contain object-right"
-                sizes="100vw"
-              />
             </div>
           </div>
         </section>

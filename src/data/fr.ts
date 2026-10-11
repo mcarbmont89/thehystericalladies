@@ -82,7 +82,7 @@ const fr: SiteContent = {
       { name: 'Jessica Rock',      role: 'Pianiste',                 photo: '/images/jessica-rock---pianist-Yley869167cbRRrG.JPG' },
       { name: 'Patrice Peyrieras', role: 'Compositeur Musical',      photo: '/images/patrice-concert-venise_edited-AzG75DjyDXu7q4Xj.jpg' },
       { name: 'Anthony Nyro',      role: 'Assistant de Production',  photo: '/images/anthony-m5KbzJjZneIP5aX6.jpeg' },
-      { name: 'Clémentine Marcès', role: 'Productrice · Présidente Au Haz Art' },
+      { name: 'Clémentine Marcès', role: 'Productrice · Présidente Au Haz Art', photo: '/images/captura-desde-2024-11-19-01-34-05-m6LwEMVgWKhrQppn.png' },
     ],
     associationLabel: 'Présidente de l\'association Au Haz Art',
     associationPerson: 'Clémentine Marcès',
