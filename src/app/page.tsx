@@ -44,6 +44,18 @@ export default function HomePage() {
               className="object-contain object-right z-10"
               sizes="100vw"
             />
+            {/* Sponsor/partner logos over the hero */}
+            <div className="absolute bottom-3 left-0 right-0 flex justify-start items-center gap-4 z-20 px-[3vw] pointer-events-none">
+              {[
+                { src: '/images/aha-A0xwab5eN0T27gQv.png',            alt: 'Au Haz Art',  w: 'w-14' },
+                { src: '/images/logospedidam-mxBZaNRo2DC2oVKN.png',    alt: 'Spedidam',    w: 'w-20' },
+                { src: '/images/a8c6a51a-1335-4650-a7fa-c187f25e41b8-mxB7NGMq1gfQkx22.JPEG', alt: 'ADAMI', w: 'w-16' },
+              ].map(logo => (
+                <div key={logo.alt} className={`relative h-7 ${logo.w} opacity-80`}>
+                  <Image src={logo.src} alt={logo.alt} fill className="object-contain" sizes="96px" />
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -59,7 +71,9 @@ export default function HomePage() {
             ))}
             <div className="flex flex-col items-center gap-2 mt-4">
               <StarRating rating={c.home.endorsement.rating} size="lg" />
-              <p className="text-muted text-sm italic">{c.home.endorsement.quote}</p>
+              {c.home.endorsement.quote && (
+                <p className="text-muted text-sm italic">{c.home.endorsement.quote}</p>
+              )}
             </div>
           </div>
         </section>
@@ -117,7 +131,8 @@ export default function HomePage() {
                 {c.home.sectionTitles.contribute}
               </h2>
               <p className="text-muted leading-relaxed">{c.home.contributeText}</p>
-              <a href="mailto:manager@hystericalladies.net?subject=Don"
+              <a href="https://www.helloasso.com/associations/au-haz-art/formulaires/3"
+                target="_blank" rel="noopener noreferrer"
                 className="self-start bg-accent text-on-accent font-bold font-display italic text-lg
                            px-8 py-3 rounded-sm hover:opacity-90 transition-opacity duration-[200ms]
                            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg">

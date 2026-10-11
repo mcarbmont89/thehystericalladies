@@ -12,10 +12,10 @@ const fr: SiteContent = {
   ],
   meta: {
     title: 'The Hysterical Ladies: Musical Cabaret Exploring Women\'s Sexual Anxieties | The Hysterical Ladies',
-    description: "Un cabaret musical explorant les éveils et escapades sexuelles de trois \"filles Hystériques\"!",
+    description: "Un cabaret musical explorant les éveils et escapades sexuelles de trois « filles Hystériques » !",
   },
   home: {
-    heroAlt: 'The Catalogue of Sexual Anxieties at The White Bear Theatre 17TH-28TH sEPTEMBER',
+    heroAlt: 'The Catalogue of Sexual Anxieties at The White Bear Theatre 17TH-28TH SEPTEMBER',
     taglines: [
       "Si les Andrew Sisters chantaient sur les verrues génitales et la masturbation",
       "Un trio sexy dévoile les secrets cachés et inavoués de la féminité",
@@ -23,20 +23,20 @@ const fr: SiteContent = {
       "Vous allez certainement apprendre une ou deux choses",
     ],
     endorsement: {
-      quote: "Vous allez certainement apprendre une ou deux choses",
+      quote: '',
       rating: 5,
     },
-    upcomingCta: 'More about our tour!',
+    upcomingCta: 'Plus sur notre tournée !',
     sectionTitles: {
-      upcoming:   'Upcoming',
+      upcoming:   'À venir',
       contribute: 'Contribuer',
       overview:   'Aperçu',
-      news:       'News & Reviews',
+      news:       'Actualités & Critiques',
       contact:    'Contact',
     },
     contributeText: "Vous aimez ce que vous voyez ? Aidez-nous à continuer à tourner. Chaque contribution nous permet de porter ce spectacle dans de nouvelles salles, dans de nouvelles villes.",
     contributeButton: 'Faire un don.',
-    newsSubtitle: 'What media says about us and our show.',
+    newsSubtitle: 'Ce que la presse dit du spectacle.',
     contactSubtitle: 'Questions par rapport à nos tournées.',
   },
   about: {
@@ -82,6 +82,7 @@ const fr: SiteContent = {
       { name: 'Jessica Rock',      role: 'Pianiste',                 photo: '/images/jessica-rock---pianist-Yley869167cbRRrG.JPG' },
       { name: 'Patrice Peyrieras', role: 'Compositeur Musical',      photo: '/images/patrice-concert-venise_edited-AzG75DjyDXu7q4Xj.jpg' },
       { name: 'Anthony Nyro',      role: 'Assistant de Production',  photo: '/images/anthony-m5KbzJjZneIP5aX6.jpeg' },
+      { name: 'Clémentine Marcès', role: 'Productrice · Présidente Au Haz Art' },
     ],
     associationLabel: 'Présidente de l\'association Au Haz Art',
     associationPerson: 'Clémentine Marcès',
@@ -170,7 +171,7 @@ const fr: SiteContent = {
       },
       {
         source: 'Beyond the Curtain',
-        quote:  "Une expérience inoubliable qui aborde des sujets tabous avec humour et finesse. L'alchimie entre les artistes est électrique.!",
+        quote:  "Une expérience inoubliable qui aborde des sujets tabous avec humour et finesse. L'alchimie entre les artistes est électrique.",
         date:   'Septembre 2024',
         city:   'Londres',
         url:    'https://www.beyondthecurtain.co.uk/2024/09/the-catalogue-of-sexual-anxieties.html',
@@ -247,7 +248,7 @@ const fr: SiteContent = {
     address:      '29 ST3 TOUR CORTINA, 41 RUE DU DISQUE, 75013 PARIS',
     siret:        'SIRET 82398276400024',
     registration: 'PLATESV-D-2024-005680',
-    manager:      'Representée par Clémentine MARCES',
+    manager:      'Représentée par Clémentine MARCÈS',
   },
   footer: {
     company:   'Au Haz Art',
