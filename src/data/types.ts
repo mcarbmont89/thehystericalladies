@@ -61,10 +61,15 @@ export interface SiteContent {
     }
     contributeText: string
     contributeButton: string
+    newsSubtitle?: string
+    contactSubtitle?: string
   }
   about: {
     heading: string
     intro: string
+    showDescription?: string[]
+    historyHeading?: string
+    historyParagraphs?: string[]
     performers: Performer[]
     crew: CrewMember[]
     associationLabel: string
@@ -78,6 +83,7 @@ export interface SiteContent {
   }
   gallery: {
     heading: string
+    subtitle?: string
     groups: GalleryGroup[]
   }
   news: {
@@ -98,5 +104,6 @@ export interface SiteContent {
   footer: {
     company: string
     devCredit: string
+    copyright?: string
   }
 }

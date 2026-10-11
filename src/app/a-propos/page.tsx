@@ -18,12 +18,14 @@ export default function AboutPage() {
       <NavBar links={c.nav} currentLang="fr" currentPath="/a-propos" />
       <main id="main" className="pt-nav">
 
-        {/* Hero */}
+        {/* Show description hero */}
         <section className="section-dark section-pad">
           <div className="content-wrap grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col gap-6">
               <h1 className="text-display md:text-hero font-black text-text">{a.heading}</h1>
-              <p className="text-muted leading-relaxed text-base">{a.intro}</p>
+              {(a.showDescription ?? [a.intro]).map((p, i) => (
+                <p key={i} className="text-muted leading-relaxed text-base">{p}</p>
+              ))}
             </div>
             <div className="relative h-80 md:h-[480px]">
               <Image
@@ -37,40 +39,47 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Performers — red section */}
+        {/* Notre Histoire */}
+        {a.historyParagraphs && a.historyParagraphs.length > 0 && (
+          <section aria-labelledby="history-heading" className="section-dark section-pad border-t border-border">
+            <div className="content-wrap max-w-3xl">
+              <h2 id="history-heading" className="text-display font-black text-text mb-10">
+                {a.historyHeading ?? 'Notre Histoire'}
+              </h2>
+              <div className="flex flex-col gap-6">
+                {a.historyParagraphs.map((p, i) => (
+                  <p key={i} className="text-muted leading-relaxed text-base">{p}</p>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Notre Équipe — Performers */}
         <section aria-labelledby="performers-heading" className="section-red section-pad">
           <div className="content-wrap">
             <h2 id="performers-heading" className="text-display font-black text-on-accent mb-10">
-              Le trio
+              Notre Équipe
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               {a.performers.map(p => (
-                <article key={p.name} className="flex flex-col gap-3">
+                <article key={p.name} className="flex flex-col gap-2">
                   <h3 className="text-xl font-black text-on-accent">{p.name}</h3>
                   <p className="text-sm font-semibold text-on-accent/70 uppercase tracking-wide">{p.role}</p>
-                  <p className="text-on-accent/80 leading-relaxed text-sm">{p.bio}</p>
+                  {p.bio && <p className="text-on-accent/80 leading-relaxed text-sm">{p.bio}</p>}
                 </article>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Creative team — dark section */}
-        <section aria-labelledby="crew-heading" className="section-dark section-pad">
-          <div className="content-wrap">
-            <h2 id="crew-heading" className="text-display font-black text-text mb-10">
-              Équipe artistique
-            </h2>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {a.crew.map(m => (
-                <li key={m.name} className="bg-surface border border-border rounded-md p-5 shadow-card">
-                  <p className="font-semibold text-text">{m.name}</p>
-                  <p className="text-sm text-muted mt-1">{m.role}</p>
-                </li>
+                <div key={m.name} className="bg-accent/80 border border-on-accent/20 rounded-sm p-4">
+                  <p className="font-semibold text-on-accent">{m.name}</p>
+                  <p className="text-sm text-on-accent/70 mt-1">{m.role}</p>
+                </div>
               ))}
-            </ul>
-            <p className="mt-8 text-sm text-muted">
-              <span className="font-semibold text-text">{a.associationLabel} :</span>{' '}
+            </div>
+            <p className="mt-8 text-sm text-on-accent/70">
+              <span className="font-semibold text-on-accent">{a.associationLabel} :</span>{' '}
               {a.associationPerson}
             </p>
           </div>

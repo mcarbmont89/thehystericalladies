@@ -163,6 +163,9 @@ export default function HomePage() {
             <h2 id="news-heading" className="text-3xl md:text-display font-black text-text mb-10">
               {c.home.sectionTitles.news}
             </h2>
+            {c.home.newsSubtitle && (
+              <p className="text-muted text-sm mb-8 -mt-4">{c.home.newsSubtitle}</p>
+            )}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {c.news.reviews.slice(0, 3).map((r, i) => (
                 <ReviewCard key={i} review={r} />

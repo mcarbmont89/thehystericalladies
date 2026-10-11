@@ -14,7 +14,10 @@ export default function GalleryPageEn() {
       <main id="main" className="pt-nav">
         <section className="section-dark section-pad">
           <div className="content-wrap">
-            <h1 className="text-display md:text-hero font-black text-text mb-12">{g.heading}</h1>
+            <h1 className="text-display md:text-hero font-black text-text mb-4">{g.heading}</h1>
+            {g.subtitle && (
+              <p className="text-muted text-lg leading-relaxed mb-12">{g.subtitle}</p>
+            )}
             <div className="flex flex-col gap-16">
               {g.groups.map(group => (
                 <div key={`${group.venue}-${group.year}`}>

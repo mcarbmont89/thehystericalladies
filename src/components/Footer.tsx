@@ -32,7 +32,7 @@ export default function Footer({ content }: Props) {
         </div>
 
         <div className="text-xs leading-relaxed text-on-accent/60">
-          <p>© {new Date().getFullYear()} {footer.company}</p>
+          <p>{footer.copyright ?? `© ${new Date().getFullYear()} ${footer.company}`}</p>
           <p className="mt-1">{footer.devCredit}</p>
         </div>
       </div>
