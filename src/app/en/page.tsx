@@ -23,10 +23,17 @@ export default function HomePageEn() {
       <NavBar links={c.nav} currentLang="en" currentPath="/en" />
       <main id="main">
 
-        <section aria-label="Show introduction" className="relative w-full pt-nav">
-          <div className="relative w-full aspect-[16/7] md:aspect-[16/6]">
+        <section aria-label="Show introduction" className="relative w-full pt-nav bg-accent overflow-hidden">
+          <div className="relative w-full min-h-[55vw] md:min-h-[42vw]">
+            <div className="absolute inset-0 flex items-center z-0 pointer-events-none select-none">
+              <p aria-hidden="true"
+                className="font-display font-black italic uppercase leading-none text-white/10 pl-[3vw]"
+                style={{ fontSize: 'clamp(48px, 9vw, 130px)', width: '66%' }}>
+                the catalogue of sexual anxieties
+              </p>
+            </div>
             <Image src="/images/hero-pinup.png" alt={c.home.heroAlt}
-              fill priority className="object-cover object-center" sizes="100vw" />
+              fill priority className="object-contain object-right z-10" sizes="100vw" />
           </div>
         </section>
 
