@@ -14,8 +14,7 @@ const INTERVIEW_VIDEOS = [
   { id: 'jk6OQQ8Br-g', title: 'Media Lunch Interview — 9 août 2023' },
 ]
 
-// TODO: add Spotify track ID when available
-// const SPOTIFY_TRACK_ID = ''
+const SPOTIFY_TRACK_ID = '6hKtaXzGHIz0o3EpDh9O4j'
 
 export default function NewsPage() {
   const c = fr
@@ -57,8 +56,8 @@ export default function NewsPage() {
           </div>
         </section>
 
-        {/* Spotify embed placeholder — add SPOTIFY_TRACK_ID when known */}
-        {/* <section className="section-dark pb-16">
+        {/* Spotify embed */}
+        <section className="section-dark pb-16">
           <div className="content-wrap max-w-2xl mx-auto">
             <iframe
               src={`https://open.spotify.com/embed/track/${SPOTIFY_TRACK_ID}?utm_source=generator`}
@@ -69,7 +68,7 @@ export default function NewsPage() {
               style={{ height: '352px', border: 'none' }}
             />
           </div>
-        </section> */}
+        </section>
 
       </main>
       <Footer content={c} />
